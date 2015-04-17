@@ -8,7 +8,7 @@ class PhysicalsController < ApplicationController
     @owners = Owner.all
     @brands = Brand.all
     @conditions = Condition.all
-    @formats = Format.all
+    @tape_formats = TapeFormat.all
   end
 
   # GET /physicals/1
@@ -22,7 +22,7 @@ class PhysicalsController < ApplicationController
     @owners = Owner.all
     @brands = Brand.all
     @conditions = Condition.all
-    @formats = Format.all
+    @tape_formats = TapeFormat.all
   end
 
   # GET /physicals/1/edit
@@ -30,7 +30,7 @@ class PhysicalsController < ApplicationController
     @owners = Owner.all
     @brands = Brand.all
     @conditions = Condition.all
-    @formats = Format.all
+    @tape_formats = TapeFormat.all
   end
 
   # POST /physicals
@@ -40,7 +40,7 @@ class PhysicalsController < ApplicationController
     @owners = Owner.all
     @brands = Brand.all
     @conditions = Condition.all
-    @formats = Format.all
+    @tape_formats = TapeFormat.all
 
     respond_to do |format|
       if @physical.save

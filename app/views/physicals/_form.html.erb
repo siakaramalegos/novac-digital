@@ -48,8 +48,8 @@
     <%= f.text_field :master_status %>
   </div>
   <div class="field">
-    <%= f.label :format_id %><br>
-    <%= f.collection_select :format_id, @formats, :id, :tape_format %>
+    <%= f.label :tape_format_id %><br>
+    <%= f.collection_select :tape_format_id, @tape_formats, :id, :tape_format %>
   </div>
   <div class="field">
     <%= f.label :brand_id %><br>
