@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417012051) do
+ActiveRecord::Schema.define(version: 20150417163159) do
+
+  create_table "brands", force: :cascade do |t|
+    t.string   "brand"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.string   "condition"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "digitals", force: :cascade do |t|
+    t.integer  "project_id"
+    t.string   "title"
+    t.string   "type"
+    t.string   "description"
+    t.string   "link"
+    t.string   "file"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "digitals", ["project_id"], name: "index_digitals_on_project_id"
 
   create_table "filmmakers", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +45,12 @@ ActiveRecord::Schema.define(version: 20150417012051) do
     t.string   "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "formats", force: :cascade do |t|
+    t.string   "tape_format"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "owners", force: :cascade do |t|
@@ -29,6 +61,33 @@ ActiveRecord::Schema.define(version: 20150417012051) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  create_table "physicals", force: :cascade do |t|
+    t.string   "tape"
+    t.string   "new_box"
+    t.string   "old_box"
+    t.string   "title"
+    t.string   "label_title"
+    t.text     "label_info"
+    t.datetime "label_date"
+    t.integer  "filmaker_id"
+    t.integer  "owner_id"
+    t.string   "master_status"
+    t.integer  "format_id"
+    t.integer  "brand_id"
+    t.integer  "condition_id"
+    t.text     "notes"
+    t.datetime "date"
+    t.string   "location"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "physicals", ["brand_id"], name: "index_physicals_on_brand_id"
+  add_index "physicals", ["condition_id"], name: "index_physicals_on_condition_id"
+  add_index "physicals", ["filmaker_id"], name: "index_physicals_on_filmaker_id"
+  add_index "physicals", ["format_id"], name: "index_physicals_on_format_id"
+  add_index "physicals", ["owner_id"], name: "index_physicals_on_owner_id"
 
   create_table "project_filmmakers", id: false, force: :cascade do |t|
     t.integer "projects_id"
