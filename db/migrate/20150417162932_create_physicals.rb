@@ -8,7 +8,6 @@ class CreatePhysicals < ActiveRecord::Migration
       t.string :label_title
       t.text :label_info
       t.datetime :label_date
-      t.references :filmaker, index: true, foreign_key: true
       t.references :owner, index: true, foreign_key: true
       t.string :master_status
       t.references :format, index: true, foreign_key: true

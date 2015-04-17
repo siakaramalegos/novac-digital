@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20150417195107) do
     t.string   "label_title"
     t.text     "label_info"
     t.datetime "label_date"
-    t.integer  "filmaker_id"
     t.integer  "owner_id"
     t.string   "master_status"
     t.integer  "brand_id"
@@ -79,7 +78,6 @@ ActiveRecord::Schema.define(version: 20150417195107) do
 
   add_index "physicals", ["brand_id"], name: "index_physicals_on_brand_id"
   add_index "physicals", ["condition_id"], name: "index_physicals_on_condition_id"
-  add_index "physicals", ["filmaker_id"], name: "index_physicals_on_filmaker_id"
   add_index "physicals", ["owner_id"], name: "index_physicals_on_owner_id"
   add_index "physicals", ["tape_format_id"], name: "index_physicals_on_tape_format_id"
 
