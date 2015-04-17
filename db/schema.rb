@@ -11,7 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416210116) do
+ActiveRecord::Schema.define(version: 20150417012051) do
+
+  create_table "filmmakers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string   "owner_name"
+    t.string   "contact_name"
+    t.string   "contact_email"
+    t.string   "contact_phone"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "project_filmmakers", id: false, force: :cascade do |t|
+    t.integer "projects_id"
+    t.integer "filmmakers_id"
+  end
+
+  add_index "project_filmmakers", ["filmmakers_id"], name: "index_project_filmmakers_on_filmmakers_id"
+  add_index "project_filmmakers", ["projects_id"], name: "index_project_filmmakers_on_projects_id"
+
+  create_table "projects", force: :cascade do |t|
+    t.integer  "serial_id"
+    t.integer  "owner_id"
+    t.string   "title"
+    t.text     "description"
+    t.text     "production_notes"
+    t.datetime "production_date"
+    t.integer  "production_year"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "projects", ["owner_id"], name: "index_projects_on_owner_id"
+  add_index "projects", ["serial_id"], name: "index_projects_on_serial_id"
+
+  create_table "serials", force: :cascade do |t|
+    t.string   "series_title"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
