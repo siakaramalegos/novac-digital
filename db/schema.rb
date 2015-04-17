@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417163159) do
+ActiveRecord::Schema.define(version: 20150417171731) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand"
@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 20150417163159) do
     t.string   "label_title"
     t.text     "label_info"
     t.datetime "label_date"
-    t.integer  "filmaker_id"
     t.integer  "owner_id"
     t.string   "master_status"
     t.integer  "format_id"
@@ -85,7 +84,6 @@ ActiveRecord::Schema.define(version: 20150417163159) do
 
   add_index "physicals", ["brand_id"], name: "index_physicals_on_brand_id"
   add_index "physicals", ["condition_id"], name: "index_physicals_on_condition_id"
-  add_index "physicals", ["filmaker_id"], name: "index_physicals_on_filmaker_id"
   add_index "physicals", ["format_id"], name: "index_physicals_on_format_id"
   add_index "physicals", ["owner_id"], name: "index_physicals_on_owner_id"
 

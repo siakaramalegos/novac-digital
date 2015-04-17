@@ -1,5 +1,4 @@
 class Physical < ActiveRecord::Base
-  belongs_to :filmaker
   belongs_to :owner
   belongs_to :format
   belongs_to :brand
