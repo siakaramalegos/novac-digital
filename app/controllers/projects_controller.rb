@@ -5,6 +5,8 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    @serials = Serial.all
+    @owners = Owner.all
   end
 
   # GET /projects/1
@@ -15,16 +17,22 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    @serials = Serial.all
+    @owners = Owner.all
   end
 
   # GET /projects/1/edit
   def edit
+    @serials = Serial.all
+    @owners = Owner.all
   end
 
   # POST /projects
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @serials = Serial.all
+    @owners = Owner.all
 
     respond_to do |format|
       if @project.save
