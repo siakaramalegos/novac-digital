@@ -85,6 +85,6 @@ class PhysicalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def physical_params
-      params.require(:physical).permit(:tape, :new_box, :old_box, :title, :label_title, :label_info, :label_date, :owner_id, :master_status, :format_id, :brand_id, :condition_id, :notes, :date, :location)
+      params.require(:physical).permit(:tape, :new_box, :old_box, :title, :label_title, :label_info, :label_date, :owner_id, :master_status, :tape_format_id, :brand_id, :condition_id, :notes, :date, :location)
     end
 end

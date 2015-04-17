@@ -37,7 +37,7 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @physical.owner %>
+  <%= @physical.owner.owner_name %>
 </p>
 
 <p>
@@ -46,18 +46,18 @@
 </p>
 
 <p>
-  <strong>Format:</strong>
-  <%= @physical.format %>
+  <strong>Tape Format:</strong>
+  <%= @physical.tape_format.tape_format %>
 </p>
 
 <p>
   <strong>Brand:</strong>
-  <%= @physical.brand %>
+  <%= @physical.brand.brand %>
 </p>
 
 <p>
   <strong>Condition:</strong>
-  <%= @physical.condition %>
+  <%= @physical.condition.condition %>
 </p>
 
 <p>
