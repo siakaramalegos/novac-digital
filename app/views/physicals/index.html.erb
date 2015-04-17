@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Physicals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tape</th>
+      <th>New box</th>
+      <th>Old box</th>
+      <th>Title</th>
+      <th>Label title</th>
+      <th>Label info</th>
+      <th>Label date</th>
+      <th>Filmaker</th>
+      <th>Owner</th>
+      <th>Master status</th>
+      <th>Format</th>
+      <th>Brand</th>
+      <th>Condition</th>
+      <th>Notes</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @physicals.each do |physical| %>
+      <tr>
+        <td><%= physical.tape %></td>
+        <td><%= physical.new_box %></td>
+        <td><%= physical.old_box %></td>
+        <td><%= physical.title %></td>
+        <td><%= physical.label_title %></td>
+        <td><%= physical.label_info %></td>
+        <td><%= physical.label_date %></td>
+        <td><%= physical.filmaker %></td>
+        <td><%= physical.owner %></td>
+        <td><%= physical.master_status %></td>
+        <td><%= physical.format %></td>
+        <td><%= physical.brand %></td>
+        <td><%= physical.condition %></td>
+        <td><%= physical.notes %></td>
+        <td><%= physical.date %></td>
+        <td><%= physical.location %></td>
+        <td><%= link_to 'Show', physical %></td>
+        <td><%= link_to 'Edit', edit_physical_path(physical) %></td>
+        <td><%= link_to 'Destroy', physical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Physical', new_physical_path %>

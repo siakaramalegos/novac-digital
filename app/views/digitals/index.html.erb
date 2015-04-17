@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Digitals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th>File</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @digitals.each do |digital| %>
+      <tr>
+        <td><%= digital.project %></td>
+        <td><%= digital.title %></td>
+        <td><%= digital.type %></td>
+        <td><%= digital.description %></td>
+        <td><%= digital.link %></td>
+        <td><%= digital.file %></td>
+        <td><%= link_to 'Show', digital %></td>
+        <td><%= link_to 'Edit', edit_digital_path(digital) %></td>
+        <td><%= link_to 'Destroy', digital, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Digital', new_digital_path %>

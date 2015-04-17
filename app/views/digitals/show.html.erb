@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @digital.project %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @digital.title %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @digital.type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @digital.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @digital.link %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @digital.file %>
+</p>
+
+<%= link_to 'Edit', edit_digital_path(@digital) %> |
+<%= link_to 'Back', digitals_path %>
