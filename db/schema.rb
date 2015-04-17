@@ -47,12 +47,6 @@ ActiveRecord::Schema.define(version: 20150417171731) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "formats", force: :cascade do |t|
-    t.string   "tape_format"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "owners", force: :cascade do |t|
     t.string   "owner_name"
     t.string   "contact_name"
