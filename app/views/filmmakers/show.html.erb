@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @filmmaker.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @filmmaker.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @filmmaker.phone %>
+</p>
+
+<%= link_to 'Edit', edit_filmmaker_path(@filmmaker) %> |
+<%= link_to 'Back', filmmakers_path %>
