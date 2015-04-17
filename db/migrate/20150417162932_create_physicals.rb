@@ -10,7 +10,6 @@ class CreatePhysicals < ActiveRecord::Migration
       t.datetime :label_date
       t.references :owner, index: true, foreign_key: true
       t.string :master_status
-      t.references :format, index: true, foreign_key: true
       t.references :brand, index: true, foreign_key: true
       t.references :condition, index: true, foreign_key: true
       t.text :notes
