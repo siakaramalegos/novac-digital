@@ -5,6 +5,7 @@ class DigitalsController < ApplicationController
   # GET /digitals.json
   def index
     @digitals = Digital.all
+    @projects = Project.all
   end
 
   # GET /digitals/1
@@ -15,16 +16,19 @@ class DigitalsController < ApplicationController
   # GET /digitals/new
   def new
     @digital = Digital.new
+    @projects = Project.all
   end
 
   # GET /digitals/1/edit
   def edit
+    @projects = Project.all
   end
 
   # POST /digitals
   # POST /digitals.json
   def create
     @digital = Digital.new(digital_params)
+    @projects = Project.all
 
     respond_to do |format|
       if @digital.save
@@ -69,6 +73,6 @@ class DigitalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def digital_params
-      params.require(:digital).permit(:project_id, :title, :type, :description, :link, :file)
+      params.require(:digital).permit(:project_id, :title, :file_type, :description, :link, :file)
     end
 end

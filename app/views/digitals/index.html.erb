@@ -18,9 +18,9 @@
   <tbody>
     <% @digitals.each do |digital| %>
       <tr>
-        <td><%= digital.project %></td>
+        <td><%= digital.project.title %></td>
         <td><%= digital.title %></td>
-        <td><%= digital.type %></td>
+        <td><%= digital.file_type %></td>
         <td><%= digital.description %></td>
         <td><%= digital.link %></td>
         <td><%= digital.file %></td>

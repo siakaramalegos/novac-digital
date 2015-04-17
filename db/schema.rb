@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417195107) do
+ActiveRecord::Schema.define(version: 20150417204528) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand"
@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 20150417195107) do
   create_table "digitals", force: :cascade do |t|
     t.integer  "project_id"
     t.string   "title"
-    t.string   "type"
     t.string   "description"
     t.string   "link"
     t.string   "file"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "file_type"
   end
 
   add_index "digitals", ["project_id"], name: "index_digitals_on_project_id"
