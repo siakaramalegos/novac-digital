@@ -41,7 +41,7 @@
   </div>
   <div class="field">
     <%= f.label :owner_id %><br>
-    <%= f.text_field :owner_id %>
+    <%= f.collection_select :owner_id, @owners, :id, :owner_name %>
   </div>
   <div class="field">
     <%= f.label :master_status %><br>
@@ -49,15 +49,15 @@
   </div>
   <div class="field">
     <%= f.label :format_id %><br>
-    <%= f.text_field :format_id %>
+    <%= f.collection_select :format_id, @formats, :id, :tape_format %>
   </div>
   <div class="field">
     <%= f.label :brand_id %><br>
-    <%= f.text_field :brand_id %>
+    <%= f.collection_select :brand_id, @brands, :id, :brand %>
   </div>
   <div class="field">
     <%= f.label :condition_id %><br>
-    <%= f.text_field :condition_id %>
+    <%= f.collection_select :condition_id, @conditions, :id, :condition %>
   </div>
   <div class="field">
     <%= f.label :notes %><br>

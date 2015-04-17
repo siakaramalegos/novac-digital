@@ -5,6 +5,10 @@ class PhysicalsController < ApplicationController
   # GET /physicals.json
   def index
     @physicals = Physical.all
+    @owners = Owner.all
+    @brands = Brand.all
+    @conditions = Condition.all
+    @formats = Format.all
   end
 
   # GET /physicals/1
@@ -15,16 +19,28 @@ class PhysicalsController < ApplicationController
   # GET /physicals/new
   def new
     @physical = Physical.new
+    @owners = Owner.all
+    @brands = Brand.all
+    @conditions = Condition.all
+    @formats = Format.all
   end
 
   # GET /physicals/1/edit
   def edit
+    @owners = Owner.all
+    @brands = Brand.all
+    @conditions = Condition.all
+    @formats = Format.all
   end
 
   # POST /physicals
   # POST /physicals.json
   def create
     @physical = Physical.new(physical_params)
+    @owners = Owner.all
+    @brands = Brand.all
+    @conditions = Condition.all
+    @formats = Format.all
 
     respond_to do |format|
       if @physical.save
