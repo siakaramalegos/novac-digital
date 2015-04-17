@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417171731) do
+ActiveRecord::Schema.define(version: 20150417195107) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand"
@@ -66,20 +66,20 @@ ActiveRecord::Schema.define(version: 20150417171731) do
     t.datetime "label_date"
     t.integer  "owner_id"
     t.string   "master_status"
-    t.integer  "format_id"
     t.integer  "brand_id"
     t.integer  "condition_id"
     t.text     "notes"
     t.datetime "date"
     t.string   "location"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "tape_format_id"
   end
 
   add_index "physicals", ["brand_id"], name: "index_physicals_on_brand_id"
   add_index "physicals", ["condition_id"], name: "index_physicals_on_condition_id"
-  add_index "physicals", ["format_id"], name: "index_physicals_on_format_id"
   add_index "physicals", ["owner_id"], name: "index_physicals_on_owner_id"
+  add_index "physicals", ["tape_format_id"], name: "index_physicals_on_tape_format_id"
 
   create_table "project_filmmakers", id: false, force: :cascade do |t|
     t.integer "projects_id"
@@ -108,6 +108,12 @@ ActiveRecord::Schema.define(version: 20150417171731) do
     t.string   "series_title"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "tape_formats", force: :cascade do |t|
+    t.string   "tape_format"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

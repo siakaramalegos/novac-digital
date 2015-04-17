@@ -1,0 +1,21 @@
+<%= form_for(@tape_format) do |f| %>
+  <% if @tape_format.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tape_format.errors.count, "error") %> prohibited this tape_format from being saved:</h2>
+
+      <ul>
+      <% @tape_format.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tape_format %><br>
+    <%= f.text_field :tape_format %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

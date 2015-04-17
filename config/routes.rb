@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tape_formats
   resources :formats
   resources :brands
   resources :conditions

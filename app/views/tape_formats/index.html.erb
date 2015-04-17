@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tape Formats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tape format</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tape_formats.each do |tape_format| %>
+      <tr>
+        <td><%= tape_format.tape_format %></td>
+        <td><%= link_to 'Show', tape_format %></td>
+        <td><%= link_to 'Edit', edit_tape_format_path(tape_format) %></td>
+        <td><%= link_to 'Destroy', tape_format, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tape format', new_tape_format_path %>
