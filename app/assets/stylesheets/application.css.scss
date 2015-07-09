@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+h1, h2, h3, .nav, a.navbar-brand {
+  font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+  color: #404040;
+}
+
+h1.title {
+  color: #404040;
+}
+
+.navbar {
+  background-color: #404040;
+}
