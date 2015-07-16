@@ -2,7 +2,7 @@
 
 <h1>Listing Owners</h1>
 
-<table class="table">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Owner name</th>
@@ -31,3 +31,8 @@
 <br>
 
 <%= link_to 'New Owner', new_owner_path %>
+
+<script>
+  var offset = $('.navbar').height();
+  $('table').stickyTableHeaders({fixedOffset: offset});
+</script>

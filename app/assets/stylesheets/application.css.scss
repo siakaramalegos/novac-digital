@@ -18,7 +18,7 @@ body {
   font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
-h1, h2, h3, .nav, a.navbar-brand {
+h1, h2, h3, .nav, a.navbar-brand, thead {
   font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
   color: #404040;
 }
@@ -29,4 +29,8 @@ h1.title {
 
 .navbar {
   background-color: #404040;
+}
+
+thead {
+  background-color: #8CC63F;
 }

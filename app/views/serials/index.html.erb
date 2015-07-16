@@ -2,7 +2,7 @@
 
 <h1>Listing Serials</h1>
 
-<table class="table">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Series title</th>
@@ -25,3 +25,8 @@
 <br>
 
 <%= link_to 'New Serial', new_serial_path %>
+
+<script>
+  var offset = $('.navbar').height();
+  $('table').stickyTableHeaders({fixedOffset: offset});
+</script>

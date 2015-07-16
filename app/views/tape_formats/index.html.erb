@@ -2,7 +2,7 @@
 
 <h1>Listing Tape Formats</h1>
 
-<table class="table">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Tape format</th>
@@ -25,3 +25,8 @@
 <br>
 
 <%= link_to 'New Tape format', new_tape_format_path %>
+
+<script>
+  var offset = $('.navbar').height();
+  $('table').stickyTableHeaders({fixedOffset: offset});
+</script>
