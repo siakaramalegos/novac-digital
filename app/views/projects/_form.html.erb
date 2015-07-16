@@ -13,33 +13,41 @@
 
   <div class="field">
     <%= f.label :serial_id %><br>
-    <%= f.collection_select :serial_id, @serials, :id, :series_title %>
+    <%= f.collection_select :serial_id, @serials, :id, :series_title, {class: "form-control"} %>
   </div>
   <div class="field">
     <%= f.label :owner_id %><br>
-    <%= f.collection_select :owner_id, @owners, :id, :owner_name %>
+    <%= f.collection_select :owner_id, @owners, :id, :owner_name, {prompt: "Select an owner"}, {class: "form-control"} %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :production_notes %><br>
-    <%= f.text_area :production_notes %>
+    <%= f.text_area :production_notes, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :production_date %><br>
-    <%= f.datetime_select :production_date %>
+  <div class="field form-group">
+    <%= f.label :date_production %><br>
+    <%= f.text_field :date_production, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :production_year %><br>
-    <%= f.number_field :production_year %>
+    <%= f.number_field :production_year, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-default' %>
   </div>
 <% end %>
+
+<script>
+$('#project_date_production').datepicker({
+    format: "yyyy-mm-dd",
+    autoclose: true,
+    todayHighlight: true
+});
+</script>

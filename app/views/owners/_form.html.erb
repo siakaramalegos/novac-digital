@@ -13,21 +13,21 @@
 
   <div class="field">
     <%= f.label :owner_name %><br>
-    <%= f.text_field :owner_name %>
+    <%= f.text_field :owner_name, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :contact_name %><br>
-    <%= f.text_field :contact_name %>
+    <%= f.text_field :contact_name, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :contact_email %><br>
-    <%= f.text_field :contact_email %>
+    <%= f.text_field :contact_email, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :contact_phone %><br>
-    <%= f.text_field :contact_phone %>
+    <%= f.text_field :contact_phone, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-default' %>
   </div>
 <% end %>
