@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716222205) do
+ActiveRecord::Schema.define(version: 20150716230130) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand"
@@ -95,10 +95,10 @@ ActiveRecord::Schema.define(version: 20150716222205) do
     t.string   "title"
     t.text     "description"
     t.text     "production_notes"
-    t.datetime "production_date"
     t.integer  "production_year"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.date     "date_production"
   end
 
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id"
