@@ -5,4 +5,5 @@ class Physical < ActiveRecord::Base
   belongs_to :condition
 
   validates :owner_id, :tape, :title, :label_title, :brand_id, :condition_id, :tape_format_id, presence: true
+  validates :tape, uniqueness: true
 end
