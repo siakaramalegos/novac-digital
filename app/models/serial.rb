@@ -1,5 +1,7 @@
 class Serial < ActiveRecord::Base
 	has_many :projects
+
+  validates :series_title, presence: true, uniqueness: true
 end
 
 # == Schema Information

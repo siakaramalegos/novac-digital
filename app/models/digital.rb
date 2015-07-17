@@ -1,5 +1,8 @@
 class Digital < ActiveRecord::Base
   belongs_to :project
+
+  validates :project_id, :title, :description, presence: true
+  validates :title, uniqueness: true
 end
 
 # == Schema Information

@@ -1,6 +1,9 @@
 class Owner < ActiveRecord::Base
 	has_many :projects
   has_many :physicals
+
+  validates :owner_name, presence: true, uniqueness: true
+  validates :contact_name, :contact_email, :contact_phone, presence: true
 end
 
 # == Schema Information

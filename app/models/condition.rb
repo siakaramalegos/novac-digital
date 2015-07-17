@@ -1,5 +1,8 @@
 class Condition < ActiveRecord::Base
   has_many :physicals
+
+  validates :condition, presence: true, uniqueness: true
+  validates :description, presence: true
 end
 
 # == Schema Information

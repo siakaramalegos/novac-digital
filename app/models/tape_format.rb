@@ -1,5 +1,7 @@
 class TapeFormat < ActiveRecord::Base
   has_many :physicals
+
+  validates :tape_format, presence: true, uniqueness: true
 end
 
 # == Schema Information

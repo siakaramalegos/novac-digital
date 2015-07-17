@@ -1,5 +1,7 @@
 class Brand < ActiveRecord::Base
   has_many :physicals
+
+  validates :brand, presence: true, uniqueness: true
 end
 
 # == Schema Information

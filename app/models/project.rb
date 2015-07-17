@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
   has_and_belongs_to_many :filmmakers
 
   validates :serial_id, :owner_id, :title, presence: true
+  validates :title, uniqueness: true
 end
 
 # == Schema Information
