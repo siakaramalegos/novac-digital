@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'stamp'
 gem 'bootstrap-datepicker-rails'
+gem 'awesome_print'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
