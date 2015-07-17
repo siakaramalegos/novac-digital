@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Filmmakers</h1>
+<h1>Filmmakers</h1>
+<p>
+  <%= link_to 'Enter a New Filmmaker', new_filmmaker_path, class: 'btn btn-default' %>
+</p>
 
 <table class="table table-striped table-bordered">
   <thead>
@@ -25,10 +28,6 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Filmmaker', new_filmmaker_path %>
 
 <script>
   var offset = $('.navbar').height();

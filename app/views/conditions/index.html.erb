@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Conditions</h1>
+<h1>Tape Conditions</h1>
+<p>
+  <%= link_to 'Enter a New Condition', new_condition_path, class: 'btn btn-default' %>
+</p>
 
 <table class="table table-striped table-bordered">
   <thead>
@@ -23,10 +26,6 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Condition', new_condition_path %>
 
 <script>
   var offset = $('.navbar').height();

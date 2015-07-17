@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Digitals</h1>
+<h1>Digital Film Content</h1>
+<p>
+  <%= link_to 'Enter a New Digital', new_digital_path, class: 'btn btn-default' %>
+</p>
 
 <table class="table table-striped table-bordered">
   <thead>
@@ -31,10 +34,6 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Digital', new_digital_path %>
 
 <script>
   var offset = $('.navbar').height();
