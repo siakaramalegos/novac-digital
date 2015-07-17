@@ -5,3 +5,13 @@ one:
 
 two:
   series_title: MyString
+
+# == Schema Information
+#
+# Table name: serials
+#
+#  id           :integer          not null, primary key
+#  series_title :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
