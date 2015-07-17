@@ -13,29 +13,29 @@
 
   <div class="field">
     <%= f.label :project_id %><br>
-    <%= f.collection_select :project_id, @projects, :id, :title %>
+    <%= f.collection_select :project_id, @projects, :id, :title, {prompt: "Select a project for the film"}, {class: "form-control"} %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :file_type %><br>
-    <%= f.text_field :file_type %>
+    <%= f.text_field :file_type, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :link %><br>
-    <%= f.text_field :link %>
+    <%= f.text_field :link, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :file %><br>
-    <%= f.text_field :file %>
+    <%= f.text_field :file, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-default' %>
   </div>
 <% end %>
