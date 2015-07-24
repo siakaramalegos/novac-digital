@@ -4,16 +4,29 @@ class PhysicalsController < ApplicationController
   # GET /physicals
   # GET /physicals.json
   def index
-    @physicals = Physical.all
     @owners = Owner.all
     @brands = Brand.all
     @conditions = Condition.all
     @tape_formats = TapeFormat.all
+
+    if params[:search]
+      @physicals = Physical.where("tape LIKE ? OR title LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
+      if @physicals.size.zero?
+        flash[:notice] = "No result found"
+        @physicals = Physical.all
+      end
+    else
+      @physicals = Physical.all
+    end
   end
 
   # GET /physicals/1
   # GET /physicals/1.json
   def show
+    @owners = Owner.all
+    @brands = Brand.all
+    @conditions = Condition.all
+    @tape_formats = TapeFormat.all
   end
 
   # GET /physicals/new
@@ -56,6 +69,11 @@ class PhysicalsController < ApplicationController
   # PATCH/PUT /physicals/1
   # PATCH/PUT /physicals/1.json
   def update
+    @owners = Owner.all
+    @brands = Brand.all
+    @conditions = Condition.all
+    @tape_formats = TapeFormat.all
+
     respond_to do |format|
       if @physical.update(physical_params)
         format.html { redirect_to @physical, notice: 'Physical was successfully updated.' }
