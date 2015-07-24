@@ -10,7 +10,7 @@ class PhysicalsController < ApplicationController
     @tape_formats = TapeFormat.all
 
     if params[:search]
-      @physicals = Physical.where("tape LIKE ? OR title LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
+      @physicals = Physical.where("tape LIKE ? OR LOWER(title) LIKE ?", "%#{params[:search]}%", "%#{params[:search].downcase}%")
       if @physicals.size.zero?
         flash[:notice] = "No result found"
         @physicals = Physical.all
