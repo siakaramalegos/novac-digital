@@ -1,4 +1,7 @@
 class ProcessStep < ActiveRecord::Base
+  has_many :physicals
+
+  validates :process_step, :order, presence: true, uniqueness: true
 end
 
 # == Schema Information
