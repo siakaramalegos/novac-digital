@@ -1,14 +1,10 @@
 class PhysicalsController < ApplicationController
   before_action :set_physical, only: [:show, :edit, :update, :destroy]
+  before_action :set_filters, except: [:destroy]
 
   # GET /physicals
   # GET /physicals.json
   def index
-    @owners = Owner.all
-    @brands = Brand.all
-    @conditions = Condition.all
-    @tape_formats = TapeFormat.all
-
     if params[:search]
       @physicals = Physical.where("tape LIKE ? OR LOWER(title) LIKE ?", "%#{params[:search]}%", "%#{params[:search].downcase}%")
       if @physicals.size.zero?
@@ -23,37 +19,21 @@ class PhysicalsController < ApplicationController
   # GET /physicals/1
   # GET /physicals/1.json
   def show
-    @owners = Owner.all
-    @brands = Brand.all
-    @conditions = Condition.all
-    @tape_formats = TapeFormat.all
   end
 
   # GET /physicals/new
   def new
     @physical = Physical.new
-    @owners = Owner.all
-    @brands = Brand.all
-    @conditions = Condition.all
-    @tape_formats = TapeFormat.all
   end
 
   # GET /physicals/1/edit
   def edit
-    @owners = Owner.all
-    @brands = Brand.all
-    @conditions = Condition.all
-    @tape_formats = TapeFormat.all
   end
 
   # POST /physicals
   # POST /physicals.json
   def create
     @physical = Physical.new(physical_params)
-    @owners = Owner.all
-    @brands = Brand.all
-    @conditions = Condition.all
-    @tape_formats = TapeFormat.all
 
     respond_to do |format|
       if @physical.save
@@ -69,11 +49,6 @@ class PhysicalsController < ApplicationController
   # PATCH/PUT /physicals/1
   # PATCH/PUT /physicals/1.json
   def update
-    @owners = Owner.all
-    @brands = Brand.all
-    @conditions = Condition.all
-    @tape_formats = TapeFormat.all
-
     respond_to do |format|
       if @physical.update(physical_params)
         format.html { redirect_to @physical, notice: 'Physical was successfully updated.' }
@@ -96,6 +71,15 @@ class PhysicalsController < ApplicationController
   end
 
   private
+    # Set up all references
+    def set_filters
+      @owners = Owner.all
+      @brands = Brand.all
+      @conditions = Condition.all
+      @tape_formats = TapeFormat.all
+      @process_steps = ProcessStep.all
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_physical
       @physical = Physical.find(params[:id])
@@ -103,6 +87,6 @@ class PhysicalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def physical_params
-      params.require(:physical).permit(:tape, :new_box, :old_box, :title, :label_title, :label_info, :date_label, :owner_id, :master_status, :tape_format_id, :brand_id, :condition_id, :notes, :date_actual, :location)
+      params.require(:physical).permit(:tape, :new_box, :old_box, :title, :label_title, :label_info, :date_label, :owner_id, :master_status, :tape_format_id, :brand_id, :condition_id, :notes, :date_actual, :location, :process_step_id)
     end
 end
