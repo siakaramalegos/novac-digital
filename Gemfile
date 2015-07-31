@@ -11,6 +11,7 @@ gem 'stamp'
 gem 'bootstrap-datepicker-rails'
 gem 'awesome_print'
 gem 'annotate', '~> 2.6.6'
+gem "font-awesome-rails"
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
