@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717160559) do
+ActiveRecord::Schema.define(version: 20150731170829) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand"
@@ -63,23 +63,32 @@ ActiveRecord::Schema.define(version: 20150717160559) do
     t.string   "title"
     t.string   "label_title"
     t.text     "label_info"
-    t.integer  "owner_id",       default: 1
+    t.integer  "owner_id",        default: 1
     t.string   "master_status"
     t.integer  "brand_id"
     t.integer  "condition_id"
     t.text     "notes"
     t.string   "location"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "tape_format_id"
     t.date     "date_label"
     t.date     "date_actual"
+    t.integer  "process_step_id"
   end
 
   add_index "physicals", ["brand_id"], name: "index_physicals_on_brand_id"
   add_index "physicals", ["condition_id"], name: "index_physicals_on_condition_id"
   add_index "physicals", ["owner_id"], name: "index_physicals_on_owner_id"
+  add_index "physicals", ["process_step_id"], name: "index_physicals_on_process_step_id"
   add_index "physicals", ["tape_format_id"], name: "index_physicals_on_tape_format_id"
+
+  create_table "process_steps", force: :cascade do |t|
+    t.string   "process_step"
+    t.integer  "order"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "project_filmmakers", id: false, force: :cascade do |t|
     t.integer "projects_id"
