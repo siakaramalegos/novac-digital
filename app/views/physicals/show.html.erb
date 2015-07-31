@@ -64,6 +64,11 @@
 </p>
 
 <p>
+  <strong>Process Step:</strong>
+  <%= @physical.try(:process_step).try(:process_step) %>
+</p>
+
+<p>
   <strong>Notes:</strong>
   <%= @physical.notes %>
 </p>

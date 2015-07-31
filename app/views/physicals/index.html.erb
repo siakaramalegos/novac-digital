@@ -27,6 +27,7 @@
       <th>Format</th>
       <th>Brand</th>
       <th>Condition</th>
+      <th>Process Step</th>
       <th>Notes</th>
       <th>Location</th>
       <th colspan="3"></th>
@@ -49,6 +50,7 @@
         <td><%= physical.tape_format.tape_format %></td>
         <td><%= physical.brand.brand %></td>
         <td><%= physical.condition.condition %></td>
+        <td><%= physical.try(:process_step).try(:process_step) %></td>
         <td><%= physical.notes %></td>
         <td><%= physical.location %></td>
         <td><%= link_to 'Show', physical %></td>

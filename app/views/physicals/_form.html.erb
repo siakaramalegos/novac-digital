@@ -64,6 +64,10 @@
     <%= f.collection_select :condition_id, @conditions, :id, :condition, {prompt: "Select condition of tape"}, {class: "form-control"} %>
   </div>
   <div class="field form-group">
+    <%= f.label :process_step %><br>
+    <%= f.collection_select :process_step_id, @process_steps, :id, :process_step, {prompt: "Select status of tape for digitization process"}, {class: "form-control"} %>
+  </div>
+  <div class="field form-group">
     <%= f.label :notes %><br>
     <%= f.text_area :notes, class: 'form-control' %>
   </div>
