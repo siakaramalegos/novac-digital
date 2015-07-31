@@ -21,7 +21,7 @@
         <h3 class="panel-title">Label Data</h3>
       </div>
       <div class="panel-body">
-        <span class="pull-right"><em><%= @physical.date_label.stamp('July 1, 2015') %></em></span>
+        <span class="pull-right"><em><%= @physical.try(:date_label).try(:stamp, 'July 1, 2015') %></em></span>
         <h3 class="green-text no-top-margin"><%= @physical.label_title %></h3>
         <p><%= @physical.label_info %></p>
         <p>
@@ -52,7 +52,7 @@
         <h3 class="panel-title">Actual Data</h3>
       </div>
       <div class="panel-body">
-        <span class="pull-right"><em><%= @physical.date_actual.stamp('July 1, 2015') %></em></span>
+        <span class="pull-right"><em><%= @physical.try(:date_actual).try(:stamp, 'July 1, 2015') %></em></span>
         <h3 class="green-text no-top-margin"><%= @physical.title %></h3>
         <p><%= @physical.notes %></p>
         <p>
