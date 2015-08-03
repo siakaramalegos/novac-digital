@@ -29,14 +29,11 @@
     <tr>
       <th>Tape</th>
       <th>New box</th>
-      <th>Old box</th>
       <th>Title</th>
       <th>Label title</th>
       <th>Label info</th>
       <th>Actual date</th>
       <th>Owner</th>
-      <th>Format</th>
-      <th>Brand</th>
       <th>Condition</th>
       <th>Process Step</th>
       <th>Notes</th>
@@ -49,14 +46,11 @@
       <tr>
         <td><%= physical.tape %></td>
         <td><%= physical.new_box %></td>
-        <td><%= physical.old_box %></td>
         <td><%= physical.title %></td>
         <td><%= physical.label_title %></td>
         <td><%= physical.label_info %></td>
         <td><%= physical.date_actual %></td>
         <td><%= physical.owner.owner_name %></td>
-        <td><%= physical.tape_format.tape_format %></td>
-        <td><%= physical.brand.brand %></td>
         <td><%= physical.condition.condition %></td>
         <td><%= physical.try(:process_step).try(:process_step) %></td>
         <td><%= physical.notes %></td>
