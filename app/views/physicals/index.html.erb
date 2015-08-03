@@ -33,7 +33,6 @@
       <th>Label title</th>
       <th>Label info</th>
       <th>Actual date</th>
-      <th>Owner</th>
       <th>Condition</th>
       <th>Process Step</th>
       <th>Notes</th>
@@ -49,8 +48,7 @@
         <td><%= physical.title %></td>
         <td><%= physical.label_title %></td>
         <td><%= physical.label_info %></td>
-        <td><%= physical.date_actual %></td>
-        <td><%= physical.owner.owner_name %></td>
+        <td><%= physical.try(:date_actual).try(:stamp, "Jan 2015") %></td>
         <td><%= physical.condition.condition %></td>
         <td><%= physical.try(:process_step).try(:process_step) %></td>
         <td><%= physical.notes %></td>
