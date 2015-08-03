@@ -11,6 +11,8 @@ class PhysicalsController < ApplicationController
         flash[:notice] = "No result found"
         @physicals = Physical.all
       end
+    elsif params[:process_step]
+      @physicals = Physical.where("process_step_id LIKE ?", params[:process_step])
     else
       @physicals = Physical.all
     end

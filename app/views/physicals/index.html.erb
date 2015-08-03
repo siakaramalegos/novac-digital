@@ -1,14 +1,27 @@
 <h1>Physical Tape Archive</h1>
 <p>
-  <%= link_to 'Add a New Tape', new_physical_path, class: 'btn btn-primary' %>
+  <div class="filter-search">
+    <span class="filter-block">
+      <%= link_to 'Add a New Tape', new_physical_path, class: 'btn btn-primary btn-xs' %>
+    </span>
 
+    <span class="filter-block">
+      <%= form_tag("/physicals", method: "get", role: "search", class: "form-inline filter-search") do %>
+        <div class="form-group">
+          <%= text_field_tag(:search, nil, placeholder: "Tape ID or Title", class: "form-control, input-xs") %>
+        </div>
+        <%= submit_tag("Search", class: "btn btn-default btn-xs") %>
+      <% end %>
+    </span>
 
-  <%= form_tag("/physicals", method: "get", role: "search", class: "form-inline") do %>
-    <div class="form-group">
-      <%= text_field_tag(:search, nil, placeholder: "Tape ID or Title", class: "form-control") %>
-    </div>
-    <%= submit_tag("Search", class: "btn btn-default") %>
-  <% end %>
+    <span class="filter-block">
+      <strong class="grey-text">Filter by:</strong>
+      <% @process_steps.each do |process_step| %>
+        <a href="?process_step=<%= process_step.id %>"><button class="btn btn-warning btn-xs"><%= process_step.process_step %></button></a>
+      <% end %>
+      <%= link_to "All", physicals_path, class: "btn btn-warning btn-xs" %>
+    </span>
+  </div>
 
 </p>
 <table class="table table-striped table-bordered">
