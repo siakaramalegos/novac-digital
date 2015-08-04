@@ -56,3 +56,23 @@ thead {
 .grey-text {
   color: #aaa;
 }
+
+.footer {
+  background-color: #404040;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  a {
+    color: #aaa;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  img {
+    margin: 0;
+  }
+}
