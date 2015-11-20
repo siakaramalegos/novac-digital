@@ -5,7 +5,7 @@ class Physical < ActiveRecord::Base
   belongs_to :condition
   belongs_to :process_step
 
-  validates :owner_id, :tape, :title, :label_title, :brand_id, :condition_id, :tape_format_id, presence: true
+  validates :owner_id, :tape, :title, :brand_id, :condition_id, :tape_format_id, presence: true
   validates :tape, uniqueness: true
 end
 
@@ -18,7 +18,6 @@ end
 #  new_box         :string
 #  old_box         :string
 #  title           :string
-#  label_title     :string
 #  label_info      :text
 #  owner_id        :integer          default(1)
 #  master_status   :string

@@ -1,4 +1,4 @@
-<h1>Physical Tape Archive</h1>
+<h1>Tape Archive</h1>
 <p>
   <div class="filter-search">
     <span class="filter-block">
@@ -30,8 +30,7 @@
       <th>Tape</th>
       <th>New box</th>
       <th>Title</th>
-      <th>Label title</th>
-      <th>Label info</th>
+      <th>Label Title &amp; Info</th>
       <th>Actual date</th>
       <th>Condition</th>
       <th>Process Step</th>
@@ -46,7 +45,6 @@
         <td><%= physical.tape %></td>
         <td><%= physical.new_box %></td>
         <td><%= physical.title %></td>
-        <td><%= physical.label_title %></td>
         <td><%= physical.label_info %></td>
         <td><%= physical.try(:date_actual).try(:stamp, "Jan 2015") %></td>
         <td><%= physical.condition.condition %></td>

@@ -22,13 +22,14 @@
       </div>
       <div class="panel-body">
         <span class="pull-right"><em><%= @physical.try(:date_label).try(:stamp, 'July 1, 2015') %></em></span>
-        <h3 class="green-text no-top-margin"><%= @physical.label_title %></h3>
-        <p><%= @physical.label_info %></p>
-        <p>
-          <strong>New box:</strong> <%= @physical.new_box %>, <strong>Old box:</strong> <%= @physical.old_box %>
-        </p>
         <p>
           <strong>Location:</strong> <%= @physical.location %>
+        </p>
+        <p>
+          <strong>Label Title and Info</strong><br>
+          <%= @physical.label_info %></p>
+        <p>
+          <strong>New box:</strong> <%= @physical.new_box %>, <strong>Old box:</strong> <%= @physical.old_box %>
         </p>
 
         <p>

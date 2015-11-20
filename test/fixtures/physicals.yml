@@ -5,15 +5,14 @@ one:
   new_box: MyString
   old_box: MyString
   title: MyString
-  label_title: MyString
   label_info: MyText
   label_date: 2015-04-17 11:29:32
-  filmaker_id: 
-  owner_id: 
+  filmaker_id:
+  owner_id:
   master_status: MyString
-  format_id: 
-  brand_id: 
-  condition_id: 
+  format_id:
+  brand_id:
+  condition_id:
   notes: MyText
   date: 2015-04-17 11:29:32
   location: MyString
@@ -23,15 +22,14 @@ two:
   new_box: MyString
   old_box: MyString
   title: MyString
-  label_title: MyString
   label_info: MyText
   label_date: 2015-04-17 11:29:32
-  filmaker_id: 
-  owner_id: 
+  filmaker_id:
+  owner_id:
   master_status: MyString
-  format_id: 
-  brand_id: 
-  condition_id: 
+  format_id:
+  brand_id:
+  condition_id:
   notes: MyText
   date: 2015-04-17 11:29:32
   location: MyString
@@ -45,7 +43,6 @@ two:
 #  new_box         :string
 #  old_box         :string
 #  title           :string
-#  label_title     :string
 #  label_info      :text
 #  owner_id        :integer          default(1)
 #  master_status   :string

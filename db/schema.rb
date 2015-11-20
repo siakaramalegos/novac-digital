@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731170829) do
+ActiveRecord::Schema.define(version: 20151120213827) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand"
@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20150731170829) do
     t.string   "new_box"
     t.string   "old_box"
     t.string   "title"
-    t.string   "label_title"
     t.text     "label_info"
     t.integer  "owner_id",        default: 1
     t.string   "master_status"

@@ -18,7 +18,7 @@ class PhysicalsControllerTest < ActionController::TestCase
 
   test "should create physical" do
     assert_difference('Physical.count') do
-      post :create, physical: { brand_id: @physical.brand_id, condition_id: @physical.condition_id, date: @physical.date, filmaker_id: @physical.filmaker_id, format_id: @physical.format_id, label_date: @physical.label_date, label_info: @physical.label_info, label_title: @physical.label_title, location: @physical.location, master_status: @physical.master_status, new_box: @physical.new_box, notes: @physical.notes, old_box: @physical.old_box, owner_id: @physical.owner_id, tape: @physical.tape, title: @physical.title }
+      post :create, physical: { brand_id: @physical.brand_id, condition_id: @physical.condition_id, date: @physical.date, filmaker_id: @physical.filmaker_id, format_id: @physical.format_id, label_date: @physical.label_date, label_info: @physical.label_info, location: @physical.location, master_status: @physical.master_status, new_box: @physical.new_box, notes: @physical.notes, old_box: @physical.old_box, owner_id: @physical.owner_id, tape: @physical.tape, title: @physical.title }
     end
 
     assert_redirected_to physical_path(assigns(:physical))
@@ -35,7 +35,7 @@ class PhysicalsControllerTest < ActionController::TestCase
   end
 
   test "should update physical" do
-    patch :update, id: @physical, physical: { brand_id: @physical.brand_id, condition_id: @physical.condition_id, date: @physical.date, filmaker_id: @physical.filmaker_id, format_id: @physical.format_id, label_date: @physical.label_date, label_info: @physical.label_info, label_title: @physical.label_title, location: @physical.location, master_status: @physical.master_status, new_box: @physical.new_box, notes: @physical.notes, old_box: @physical.old_box, owner_id: @physical.owner_id, tape: @physical.tape, title: @physical.title }
+    patch :update, id: @physical, physical: { brand_id: @physical.brand_id, condition_id: @physical.condition_id, date: @physical.date, filmaker_id: @physical.filmaker_id, format_id: @physical.format_id, label_date: @physical.label_date, label_info: @physical.label_info, location: @physical.location, master_status: @physical.master_status, new_box: @physical.new_box, notes: @physical.notes, old_box: @physical.old_box, owner_id: @physical.owner_id, tape: @physical.tape, title: @physical.title }
     assert_redirected_to physical_path(assigns(:physical))
   end
 

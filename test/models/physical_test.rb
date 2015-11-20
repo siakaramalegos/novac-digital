@@ -15,7 +15,6 @@ end
 #  new_box         :string
 #  old_box         :string
 #  title           :string
-#  label_title     :string
 #  label_info      :text
 #  owner_id        :integer          default(1)
 #  master_status   :string
