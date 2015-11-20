@@ -12,7 +12,7 @@ class PhysicalsController < ApplicationController
         @physicals = Physical.all
       end
     elsif params[:process_step]
-      @physicals = Physical.where("process_step_id LIKE ?", params[:process_step])
+      @physicals = Physical.where("CAST(process_step_id AS TEXT) LIKE ?", params[:process_step])
     else
       @physicals = Physical.all
     end
