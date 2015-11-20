@@ -80,3 +80,6 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+
+# Node files
+/node-v4.1.0-darwin-x64/
