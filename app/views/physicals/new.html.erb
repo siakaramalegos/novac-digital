@@ -1,5 +1,14 @@
-<h1>New Physical</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="green-text">New Tape</h1>
+    </div>
+  </div>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Back', physicals_path %>
+  <br>
+  <p>
+    <%= link_to content_tag(:i, ' All Tapes', class: "fa fa-table"), physicals_path, class: 'btn btn-default' %>
+  </p>
+</div>

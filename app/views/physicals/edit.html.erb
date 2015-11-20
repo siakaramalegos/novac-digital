@@ -1,6 +1,15 @@
-<h1>Editing Physical</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="green-text">Editing Tape <%= @physical.tape %></h1>
+    </div>
+  </div>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @physical %> |
-<%= link_to 'Back', physicals_path %>
+  <br>
+  <p>
+    <%= link_to fa_icon('eye', text: 'Show Tape'), @physical, class: 'btn btn-default' %>
+    <%= link_to content_tag(:i, ' All Tapes', class: "fa fa-table"), physicals_path, class: 'btn btn-default' %>
+  </p>
+</div>

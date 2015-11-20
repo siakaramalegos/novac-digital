@@ -11,72 +11,133 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= f.label 'Tape ID' %><br>
-    <%= f.text_field :tape, class: 'form-control' %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="field form-group">
+        <%= f.label 'Tape ID' %><br>
+        <%= f.text_field :tape, class: 'form-control' %>
+      </div>
+      <%# TODO: Turn into a button group like bus app %>
+      <div class="field form-group">
+        <%= f.label :process_step %><br>
+        <%= f.collection_select :process_step_id, @process_steps, :id, :process_step, {prompt: "Select status of tape for digitization process"}, {class: "form-control"} %>
+      </div>
+    </div>
   </div>
-  <div class="field form-group">
-    <%= f.label :new_box %><br>
-    <%= f.text_field :new_box, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :old_box %><br>
-    <%= f.text_field :old_box, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :label_title %><br>
-    <%= f.text_field :label_title, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :label_info %><br>
-    <%= f.text_area :label_info, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label "Date on Label, only if present" %><br>
-    <%= f.text_field :date_label, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label "Date of film, only if known" %><br>
-    <%= f.text_field :date_actual, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :owner_id %><br>
-    <%= f.collection_select :owner_id, @owners, :id, :owner_name, {prompt: "Select the owner of the tape"}, {class: "form-control"} %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :master_status %><br>
-    <%= f.text_field :master_status, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :tape_format_id %><br>
-    <%= f.collection_select :tape_format_id, @tape_formats, :id, :tape_format, {prompt: "Select a tape format"}, {class: "form-control"} %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :brand_id %><br>
-    <%= f.collection_select :brand_id, @brands, :id, :brand, {prompt: "Select a tape brand"}, {class: "form-control"} %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :condition_id %><br>
-    <%= f.collection_select :condition_id, @conditions, :id, :condition, {prompt: "Select condition of tape"}, {class: "form-control"} %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :process_step %><br>
-    <%= f.collection_select :process_step_id, @process_steps, :id, :process_step, {prompt: "Select status of tape for digitization process"}, {class: "form-control"} %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :location %><br>
-    <%= f.text_field :location, class: 'form-control' %>
-  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Label Data</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="field form-group">
+                <%= f.label :label_title %><br>
+                <%= f.text_field :label_title, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="field form-group">
+                <%= f.label "Date on Label, only if present" %><br>
+                <%= f.text_field :date_label, class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="field form-group">
+            <%= f.label :label_info %><br>
+            <%= f.text_area :label_info, class: 'form-control' %>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="field form-group">
+                <%= f.label :new_box %><br>
+                <%= f.text_field :new_box, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="field form-group">
+                <%= f.label :old_box %><br>
+                <%= f.text_field :old_box, class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="field form-group">
+            <%= f.label :location %><br>
+            <%= f.text_field :location, class: 'form-control' %>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="field form-group">
+                <%= f.label :tape_format_id %><br>
+                <%= f.collection_select :tape_format_id, @tape_formats, :id, :tape_format, {prompt: "Select a tape format"}, {class: "form-control"} %>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="field form-group">
+                <%= f.label :brand_id %><br>
+                <%= f.collection_select :brand_id, @brands, :id, :brand, {prompt: "Select a tape brand"}, {class: "form-control"} %>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="field form-group">
+            <%= f.label :condition_id %><br>
+            <%= f.collection_select :condition_id, @conditions, :id, :condition, {prompt: "Select condition of tape"}, {class: "form-control"} %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Actual Data</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="field form-group">
+                <%= f.label :title %><br>
+                <%= f.text_field :title, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="field form-group">
+                <%= f.label "Date of film, only if known" %><br>
+                <%= f.text_field :date_actual, class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="field form-group">
+            <%= f.label :notes %><br>
+            <%= f.text_area :notes, class: 'form-control' %>
+          </div>
+          <div class="field form-group">
+            <%= f.label :owner_id %><br>
+            <%= f.collection_select :owner_id, @owners, :id, :owner_name, {prompt: "Select the owner of the tape"}, {class: "form-control"} %>
+          </div>
+          <%# TODO: drop this field once we can merge or delete data %>
+          <div class="field form-group">
+            <%= f.label :master_status %><br>
+            <%= f.text_field :master_status, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- row -->
+
   <div class="actions">
-    <%= f.submit class: 'btn btn-default' %>
+    <%= f.submit 'Save Tape', class: 'btn btn-success' %>
   </div>
 <% end %>
 
