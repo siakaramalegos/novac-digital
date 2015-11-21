@@ -1,5 +1,7 @@
 class DigitalsController < ApplicationController
   before_action :set_digital, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_vip_or_admin!, except: [:show, :index]
+  before_action :authenticate_admin!, only: [:destroy]
 
   # GET /digitals
   # GET /digitals.json

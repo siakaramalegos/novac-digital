@@ -1,5 +1,7 @@
 class TapeFormatsController < ApplicationController
   before_action :set_tape_format, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_vip_or_admin!, except: [:show, :index]
+  before_action :authenticate_admin!, only: [:destroy]
 
   # GET /tape_formats
   # GET /tape_formats.json

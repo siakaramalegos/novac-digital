@@ -1,6 +1,8 @@
 class PhysicalsController < ApplicationController
   before_action :set_physical, only: [:show, :edit, :update, :destroy]
   before_action :set_filters, except: [:destroy]
+  before_action :authenticate_vip_or_admin!, except: [:show, :index]
+  before_action :authenticate_admin!, only: [:destroy]
 
   # GET /physicals
   # GET /physicals.json

@@ -1,5 +1,6 @@
 class SerialsController < ApplicationController
   before_action :set_serial, only: [:show, :edit, :update, :destroy]
+  # TODO:  delete serials
 
   # GET /serials
   # GET /serials.json

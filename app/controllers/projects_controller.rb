@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_vip_or_admin!, except: [:show, :index]
+  before_action :authenticate_admin!, only: [:destroy]
 
   # GET /projects
   # GET /projects.json
