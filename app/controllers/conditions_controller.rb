@@ -56,10 +56,13 @@ class ConditionsController < ApplicationController
   # DELETE /conditions/1
   # DELETE /conditions/1.json
   def destroy
-    @condition.destroy
     respond_to do |format|
-      format.html { redirect_to conditions_url, notice: 'Condition was successfully destroyed.' }
-      format.json { head :no_content }
+      if @condition.destroy
+        format.html { redirect_to conditions_url, notice: 'Condition was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to conditions_url, alert: 'Cannot delete because some tapes use this condition.'}
+      end
     end
   end
 

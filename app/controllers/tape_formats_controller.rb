@@ -56,10 +56,13 @@ class TapeFormatsController < ApplicationController
   # DELETE /tape_formats/1
   # DELETE /tape_formats/1.json
   def destroy
-    @tape_format.destroy
     respond_to do |format|
-      format.html { redirect_to tape_formats_url, notice: 'Tape format was successfully destroyed.' }
-      format.json { head :no_content }
+      if @tape_format.destroy
+        format.html { redirect_to tape_formats_url, notice: 'Tape format was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to tape_formats_url, alert: 'Cannot delete because some tapes use this format.'}
+      end
     end
   end
 

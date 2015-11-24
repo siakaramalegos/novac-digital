@@ -56,10 +56,13 @@ class OwnersController < ApplicationController
   # DELETE /owners/1
   # DELETE /owners/1.json
   def destroy
-    @owner.destroy
     respond_to do |format|
-      format.html { redirect_to owners_url, notice: 'Owner was successfully destroyed.' }
-      format.json { head :no_content }
+      if @owner.destroy
+        format.html { redirect_to owners_url, notice: 'Owner was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to owners_url, alert: 'Cannot delete because some tapes use this owner.'}
+      end
     end
   end
 
