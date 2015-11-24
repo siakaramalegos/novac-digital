@@ -4,9 +4,24 @@ class Physical < ActiveRecord::Base
   belongs_to :brand
   belongs_to :condition
   belongs_to :process_step
+  has_many :physical_projects
+  has_many :projects, through: :physical_projects
 
   validates :owner_id, :tape, :title, :brand_id, :condition_id, :tape_format_id, presence: true
   validates :tape, uniqueness: true
+
+  before_destroy :ensure_not_referenced_by_any_projects
+
+  private
+
+  def ensure_not_referenced_by_any_projects
+    if physical_projects.empty?
+      return true
+    else
+      logger.error "Attempt to delete physical which has projects through physical_projects."
+      return false
+    end
+  end
 end
 
 # == Schema Information

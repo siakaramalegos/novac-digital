@@ -2,9 +2,24 @@ class Project < ActiveRecord::Base
   belongs_to :serial
   belongs_to :owner
   has_and_belongs_to_many :filmmakers
+  has_many :physical_projects
+  has_many :physicals, through: :physical_projects
 
   validates :serial_id, :owner_id, :title, presence: true
   validates :title, uniqueness: true
+
+  before_destroy :ensure_not_referenced_by_any_physicals
+
+  private
+
+  def ensure_not_referenced_by_any_physicals
+    if physical_projects.empty?
+      return true
+    else
+      logger.error "Attempt to delete project which has physicals through physical_projects."
+      return false
+    end
+  end
 end
 
 # == Schema Information

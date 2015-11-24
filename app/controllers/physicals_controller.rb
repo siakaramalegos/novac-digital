@@ -67,10 +67,13 @@ class PhysicalsController < ApplicationController
   # DELETE /physicals/1
   # DELETE /physicals/1.json
   def destroy
-    @physical.destroy
     respond_to do |format|
-      format.html { redirect_to physicals_url, notice: 'Physical was successfully destroyed.' }
-      format.json { head :no_content }
+      if @physical.destroy
+        format.html { redirect_to physicals_url, notice: 'Physical was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to owners_url, alert: 'Cannot delete because other records reference this tape.'}
+      end
     end
   end
 
