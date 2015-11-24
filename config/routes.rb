@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :formats
   resources :brands
   resources :conditions
-  resources :physicals
+  resources :physicals, path: 'tapes'
   resources :digitals
   resources :projects
   resources :filmmakers
