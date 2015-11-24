@@ -81,7 +81,7 @@ class PhysicalsController < ApplicationController
       @brands = Brand.all
       @conditions = Condition.all
       @tape_formats = TapeFormat.all
-      @process_steps = ProcessStep.all
+      @process_steps = ProcessStep.order(:order)
     end
 
     # Use callbacks to share common setup or constraints between actions.
