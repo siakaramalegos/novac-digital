@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :formats
   resources :brands
   resources :conditions
-  resources :physicals, path: 'tapes'
+  resources :physicals, path: 'tapes' do
+    get 'digitize' => 'projects#digitize'
+  end
   resources :digitals
   resources :projects
   resources :filmmakers
