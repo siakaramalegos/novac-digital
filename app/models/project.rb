@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   has_many :physical_projects
   has_many :physicals, through: :physical_projects
 
-  validates :serial_id, :owner_id, :title, presence: true
+  validates :owner_id, :title, presence: true
   validates :title, uniqueness: true
 
   before_destroy :ensure_not_referenced_by_any_physicals
@@ -36,6 +36,7 @@ end
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  date_production  :date
+#  credits          :text
 #
 # Indexes
 #

@@ -1,37 +1,58 @@
-<p>
-  <strong>Serial:</strong>
-  <%= @project.serial.series_title %>
-</p>
+<div class="container">
+<h1 class="green-text"><%= @project.title %></h1>
 
-<p>
-  <strong>Owner:</strong>
-  <%= @project.owner.owner_name %>
-</p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="text-muted">Project Details</h3>
+      </div>
+      <div class="panel-body">
+        <h4>Description</h4>
+        <p><%= @project.description %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+        <h4>Production Notes</h4>
+        <p><%= @project.production_notes %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+        <h4>Credits</h4>
+        <p><%= @project.credits %></p>
 
-<p>
-  <strong>Production notes:</strong>
-  <%= @project.production_notes %>
-</p>
+        <h4>Production date</h4>
+        <p><%= @project.date_production.try(:stamp, 'January 1, 2015') %></p>
 
-<p>
-  <strong>Production date:</strong>
-  <%= @project.date_production %>
-</p>
+        <h4>Production year</h4>
+        <p><%= @project.production_year %></p>
 
-<p>
-  <strong>Production year:</strong>
-  <%= @project.production_year %>
-</p>
+        <h4>Owner</h4>
+        <p><%= @project.owner.owner_name %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="text-muted">Formats</h3>
+      </div>
+      <div class="panel-body">
+      <h4>Tapes</h4>
+
+      <% @project.physicals.each do |tape| %>
+        <li>
+          <%= link_to "Label ID #{tape.tape}", physical_path(tape) %>: <%= tape.label_info %>
+        </li>
+      <% end %>
+
+      <h4>Drives</h4>
+      <p><em>Coming soon!</em></p>
+      <h4>Online</h4>
+      <p><em>Coming soon!</em></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+</div>
+
+

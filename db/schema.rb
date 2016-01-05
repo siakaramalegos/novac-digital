@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124215338) do
+ActiveRecord::Schema.define(version: 20151124220908) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 20151124215338) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.date     "date_production"
+    t.text     "credits"
   end
 
   add_index "projects", ["owner_id"], name: "index_projects_on_owner_id"

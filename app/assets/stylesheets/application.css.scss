@@ -20,7 +20,7 @@ body {
   font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
-h1, h2, h3, .nav, a.navbar-brand, thead {
+h1, h2, h3, h4, h5, .nav, a.navbar-brand, thead {
   font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
   color: #404040;
 }
@@ -75,4 +75,8 @@ thead {
   img {
     margin: 0;
   }
+}
+
+.panel-heading h3 {
+  margin: 0;
 }
