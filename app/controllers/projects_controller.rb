@@ -49,13 +49,11 @@ class ProjectsController < ApplicationController
 
   def create_by_tape
     @physical = Physical.find(params[:physical_id])
-    @project = @physical.projects.build(project_params)
-    @project.owner_id = @physical.owner_id
-    # @project.digitals.build
 
-    if @project.save
-      redirect_to @project, notice: 'Project successfully saved!'
+    if @physical.projects.create(project_params)
+      redirect_to @physical, notice: 'Project successfully saved!'
     else
+      # TODO: make sure it renders the digitize view with validation errors
       render :digitize
     end
   end
@@ -88,6 +86,7 @@ class ProjectsController < ApplicationController
   end
 
   def digitize
+    @owners = Owner.all
     @physical = Physical.find(params[:physical_id])
     @project = @physical.projects.build
     # @project.digitals.build

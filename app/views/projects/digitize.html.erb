@@ -44,6 +44,11 @@
               <%= project_fields.date_field :date_production, class: 'form-control' %>
             </div>
 
+            <div class="field form-group">
+              <%= project_fields.label :owner_id %><br>
+              <%= project_fields.collection_select :owner_id, @owners, :id, :owner_name, {prompt: "Select an owner", selected: @physical.owner_id}, {class: "form-control"} %>
+            </div>
+
           </div>
         </div>
       </div>

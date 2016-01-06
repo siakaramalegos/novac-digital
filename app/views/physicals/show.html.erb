@@ -16,56 +16,16 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Label Data</h3>
-      </div>
-      <div class="panel-body">
-        <span class="pull-right"><em><%= @physical.try(:date_label).try(:stamp, 'July 1, 2015') %></em></span>
-        <p>
-          <strong>Location:</strong> <%= @physical.location %>
-        </p>
-        <p>
-          <strong>Label Title and Info</strong><br>
-          <%= @physical.label_info %></p>
-        <p>
-          <strong>New box:</strong> <%= @physical.new_box %>, <strong>Old box:</strong> <%= @physical.old_box %>
-        </p>
-
-        <p>
-          <strong>Tape Format:</strong> <%= @physical.tape_format.tape_format %>
-        </p>
-
-        <p>
-          <strong>Brand:</strong> <%= @physical.brand.brand %>
-        </p>
-
-        <p>
-          <strong>Condition:</strong> <%= @physical.condition.condition %>
-        </p>
-      </div>
-    </div>
+  <div class="col-md-4 col-sm-6">
+    <%= render 'label_data' %>
   </div>
 
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Actual Data</h3>
-      </div>
-      <div class="panel-body">
-        <span class="pull-right"><em><%= @physical.try(:date_actual).try(:stamp, 'July 1, 2015') %></em></span>
-        <h3 class="green-text no-top-margin"><%= @physical.title %></h3>
-        <p><%= @physical.notes %></p>
-        <p>
-          <strong>Owner:</strong> <%= @physical.owner.owner_name %>
-        </p>
-        <p>
-          <strong>Master status:</strong>
-          <%= @physical.master_status %>
-        </p>
-      </div>
-    </div>
+  <div class="col-md-4 col-sm-6">
+    <%= render 'actual_data' %>
+  </div>
+
+  <div class="col-md-4 col-sm-6">
+    <%= render 'project_data' %>
   </div>
 
 </div>
