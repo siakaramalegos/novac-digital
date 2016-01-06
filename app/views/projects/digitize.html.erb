@@ -10,10 +10,9 @@
   <%= link_to fa_icon('table', text: 'Back To All Tapes'), physicals_path, class: 'btn btn-default' %>
 </p>
 
-<%= form_for @physical do |f| %>
+<%= form_for @project, url: {action: 'digitize'} do |project_fields| %>
   <div class="row">
 
-    <%= fields_for :projects do |project_fields| %>
       <div class="col-md-6">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -48,8 +47,9 @@
           </div>
         </div>
       </div>
+    <%= fields_for :digitals do |digital_fields| %>
     <% end %>
 
   </div>
-  <%= f.submit 'Save Projects', class: 'btn btn-success' %>
+  <%= project_fields.submit 'Save Project', class: 'btn btn-success' %>
 <% end %>

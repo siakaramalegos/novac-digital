@@ -47,6 +47,19 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def create_by_tape
+    @physical = Physical.find(params[:physical_id])
+    @project = @physical.projects.build(project_params)
+    @project.owner_id = @physical.owner_id
+    # @project.digitals.build
+
+    if @project.save
+      redirect_to @project, notice: 'Project successfully saved!'
+    else
+      render :digitize
+    end
+  end
+
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
@@ -75,7 +88,9 @@ class ProjectsController < ApplicationController
   end
 
   def digitize
-
+    @physical = Physical.find(params[:physical_id])
+    @project = @physical.projects.build
+    # @project.digitals.build
   end
 
   private
