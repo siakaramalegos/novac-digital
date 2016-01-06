@@ -3,10 +3,15 @@
     <h3 class="panel-title">Projects</h3>
   </div>
   <div class="panel-body">
+    <p>
+      <%= link_to fa_icon('hdd-o', text: 'Add a Film Project!'), physical_digitize_path(@physical), class: 'btn btn-success' %>
+    </p>
+    <br>
+
     <% @physical.projects.each do |project| %>
 
-      <span class="pull-right"><em><%= @physical.try(:date_production).try(:stamp, 'July 1, 2015') %></em></span>
-      <h3 class="green-text no-top-margin"><%= project.title %></h3>
+      <span class="pull-right text-muted"><em><%= project.try(:date_production).try(:stamp, 'July 1, 2015') %></em></span>
+      <h3 class="text-muted no-top-margin"><%= project.title %></h3>
       <p><%= project.description %></p>
 
     <% end %>

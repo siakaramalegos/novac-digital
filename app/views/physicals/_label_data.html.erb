@@ -3,7 +3,7 @@
     <h3 class="panel-title">Label Data</h3>
   </div>
   <div class="panel-body">
-    <span class="pull-right"><em><%= @physical.try(:date_label).try(:stamp, 'July 1, 2015') %></em></span>
+    <span class="pull-right text-muted"><em><%= @physical.try(:date_label).try(:stamp, 'July 1, 2015') %></em></span>
     <p>
       <strong>Location:</strong> <%= @physical.location %>
     </p>
