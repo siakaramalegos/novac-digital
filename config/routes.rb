@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :conditions
   resources :physicals, path: 'tapes' do
     get 'digitize' => 'projects#digitize'
+    post 'digitize' => 'projects#create_by_tape'
   end
   resources :digitals
   resources :projects

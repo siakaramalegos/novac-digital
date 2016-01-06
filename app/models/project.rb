@@ -1,9 +1,12 @@
 class Project < ActiveRecord::Base
-  belongs_to :serial
+  # belongs_to :serial
   belongs_to :owner
-  has_and_belongs_to_many :filmmakers
+  # has_and_belongs_to_many :filmmakers
   has_many :physical_projects
   has_many :physicals, through: :physical_projects
+
+  has_many :digitals
+  accepts_nested_attributes_for :digitals, :reject_if => :all_blank, :allow_destroy => true
 
   validates :owner_id, :title, presence: true
   validates :title, uniqueness: true
